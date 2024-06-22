@@ -42,3 +42,12 @@ console.log(Object.entries(obj1));
 
 // cheking condition
 console.log(regularUser.hasOwnProperty('name'));
+
+
+//object destructure
+const {email} = regularUser;
+console.log(email);
+
+//asigning variable name to the object
+const {email: mail} = regularUser;
+console.log(mail);
