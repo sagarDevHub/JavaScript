@@ -11,9 +11,18 @@
     </div>
   </body>
   <script>
+
+    // this is the old method of api calling and fetch api
+    // it has several steps 
     const requestUrl = "https://api.github.com/users/hiteshchoudhary";
+
+    // Step 1 ---> create new XMLHttpRequest();
     const xhr = new XMLHttpRequest();
+
+    // Step 2 ---> send a open call using open();
     xhr.open("GET", requestUrl);
+
+    // Step 3 ---> Crate a onreadystatechange variable which takes one functions and perform operations
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         const data = JSON.parse(this.responseText);
@@ -23,6 +32,8 @@
         addText(`Followers: ${followers}`);
       }
     };
+
+    // Step 4 ---> At the send the api request.
     xhr.send();
 
     function addImage(imgUrl) {
